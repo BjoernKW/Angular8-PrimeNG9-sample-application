@@ -1,4 +1,8 @@
 # Angular8-PrimeNG9 Sample Application
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Version](https://img.shields.io/github/package-json/v/BjoernKW/Angular8-PrimeNG9-sample-application.svg?style=shield)
+
 Sample application for best practices and patterns with Angular 8 and PrimeNG 9.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
