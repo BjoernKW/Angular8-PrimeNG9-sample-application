@@ -11,6 +11,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  declarations: [
+    AutoCompleteComponent
+  ]
 })
 export class FormRoutingModule { }
