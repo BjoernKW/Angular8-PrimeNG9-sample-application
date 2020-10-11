@@ -2,12 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { FormComponent } from './form.component';
-import { AutoCompleteComponent } from "./auto-complete/auto-complete.component";
-import { CalendarComponent } from "./calendar/calendar.component";
-import { InputsComponent } from "./inputs/inputs.component";
-import { CalendarModule } from "primeng/calendar";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
+import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { InputsComponent } from './inputs/inputs.component';
 
 const routes: Routes = [
   { path: '', component: FormComponent },
@@ -18,17 +15,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes),
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CalendarModule
+    RouterModule.forChild(routes)
   ],
-  exports: [RouterModule],
-  declarations: [
-    AutoCompleteComponent,
-    CalendarComponent,
-    InputsComponent
-  ]
+  exports: [RouterModule]
 })
 export class FormRoutingModule { }
