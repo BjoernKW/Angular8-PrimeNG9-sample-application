@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MenuModule } from 'primeng/menu';
 import { AppMenuRoutingModule } from './app-menu-routing.module';
 import { AppMenuComponent } from './app-menu.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
     AppMenuComponent,
     MainMenuComponent
   ],
-  imports: [
-    CommonModule,
-    AppMenuRoutingModule,
-    MenuModule
-  ],
+    imports: [
+        CommonModule,
+        AppMenuRoutingModule,
+        MenubarModule
+    ],
   exports: [
     MainMenuComponent
   ],

@@ -8,6 +8,11 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { InputsComponent } from './inputs/inputs.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { CalendarModule } from 'primeng/calendar';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    CalendarModule
+    CalendarModule,
+    AutoCompleteModule,
+    InputTextModule,
+    CheckboxModule,
+    DropdownModule,
+    InputTextareaModule
   ],
   exports: [
     AutoCompleteComponent,

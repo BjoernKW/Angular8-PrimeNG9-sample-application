@@ -11,10 +11,10 @@ export class TableComponent implements OnInit {
 
   products: Product[];
 
-  constructor(private productService: ProductService) { }
+  constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    this.productService
+    this._productService
       .get()
       .subscribe(products => this.products = products);
   }

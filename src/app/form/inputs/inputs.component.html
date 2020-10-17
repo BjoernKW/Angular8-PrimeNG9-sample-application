@@ -1,1 +1,150 @@
-<p>inputs works!</p>
+<form>
+  <h3>Vertical</h3>
+  <div class="ui-fluid">
+    <div class="p-field">
+      <label for="firstName1">First name</label>
+      <input id="firstName1" type="text" pInputText>
+    </div>
+    <div class="p-field">
+      <label for="lastName1">Last name</label>
+      <input id="lastName1" type="text" pInputText>
+    </div>
+  </div>
+
+  <h3>Vertical layout with grid</h3>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col">
+      <label for="firstName2">First name</label>
+      <input id="firstName2" type="text" pInputText>
+    </div>
+    <div class="p-field p-col">
+      <label for="lastName2">Last name</label>
+      <input id="lastName2" type="text" pInputText>
+    </div>
+  </div>
+
+  <h3>Horizontal and fixed width</h3>
+  <div class="p-field p-grid">
+    <label for="firstName3" class="p-col-fixed" style="width:100px">First name</label>
+    <div class="p-col">
+      <input id="firstName3" type="text" pInputText>
+    </div>
+  </div>
+  <div class="p-field p-grid">
+    <label for="lastName3" class="p-col-fixed" style="width:100px">Last name</label>
+    <div class="p-col">
+      <input id="lastName3" type="text" pInputText>
+    </div>
+  </div>
+
+  <h3>Horizontal and fluid width</h3>
+  <div class="ui-fluid">
+    <div class="p-field p-grid">
+      <label for="firstName4" class="p-col-12 p-md-2">First name</label>
+      <div class="p-col-12 p-md-10">
+        <input id="firstName4" type="text" pInputText>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastName4" class="p-col-12 p-md-2">Last name</label>
+      <div class="p-col-12 p-md-10">
+        <input id="lastName4" type="text" pInputText>
+      </div>
+    </div>
+  </div>
+
+  <h3>Inline</h3>
+  <div class="p-formgroup-inline">
+    <div class="p-field">
+      <label for="firstName5" class="p-sr-only">First name</label>
+      <input id="firstName5" type="text" pInputText placeholder="First name">
+    </div>
+    <div class="p-field">
+      <label for="lastName5" class="p-sr-only">Last name</label>
+      <input id="lastName5" type="text" pInputText placeholder="Last name">
+    </div>
+    <button pButton type="button" label="Submit"></button>
+  </div>
+
+  <h3>Vertical Checkbox</h3>
+  <div class="p-field-checkbox">
+    <p-checkbox id="city1"
+                name="city1"
+                value="Chicago"
+                [(ngModel)]="cities1"
+                inputId="city1"></p-checkbox>
+    <label for="city1">Chicago</label>
+  </div>
+  <div class="p-field-checkbox">
+    <p-checkbox id="city2"
+                name="city2"
+                value="Los Angeles"
+                [(ngModel)]="cities1"
+                inputId="city2"></p-checkbox>
+    <label for="city2">Los Angeles</label>
+  </div>
+
+  <h3>Horizontal Checkbox</h3>
+  <div class="p-formgroup-inline">
+    <div class="p-field-checkbox">
+      <p-checkbox id="city3"
+                  name="city3"
+                  value="Chicago"
+                  [(ngModel)]="cities2"
+                  inputId="city3"></p-checkbox>
+      <label for="city3">Chicago</label>
+    </div>
+    <div class="p-field-checkbox">
+      <p-checkbox id="city4"
+                  name="city4"
+                  value="Los Angeles"
+                  [(ngModel)]="cities2"
+                  inputId="city4"></p-checkbox>
+      <label for="city4">Los Angeles</label>
+    </div>
+  </div>
+
+  <h3>Help text</h3>
+  <div class="p-field ui-fluid">
+    <label for="username">Username</label>
+    <input id="username" type="text" pInputText aria-describedby="username-help">
+    <small id="username-help">Enter your username to reset your password.</small>
+  </div>
+
+  <h3>Advanced</h3>
+  <div class="ui-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-6">
+      <label for="firstname6">Firstname</label>
+      <input id="firstname6" type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label for="lastname6">Lastname</label>
+      <input id="lastname6" type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12">
+      <label for="address">Address</label>
+      <textarea class="ui-inputtextarea"
+                id="address"
+                rows="4"
+                pInputTextarea></textarea>
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label for="city">City</label>
+      <input id="city" type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+      <label for="state">State</label>
+      <p-dropdown id="state"
+                  name="state"
+                  inputId="state"
+                  [options]="states"
+                  [(ngModel)]="selectedState"
+                  placeholder="Select"
+                  optionLabel="name"></p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+      <label for="zip">Zip</label>
+      <input id="zip" type="text" pInputText>
+    </div>
+  </div>
+</form>

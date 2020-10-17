@@ -1,1 +1,7 @@
-<p>auto-complete works!</p>
+<label for="products">Products</label>
+<p-autoComplete
+  id="products"
+  [(ngModel)]="searchQuery"
+  [suggestions]="results"
+  (completeMethod)="search($event)"
+  field="name"></p-autoComplete>
