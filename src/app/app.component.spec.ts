@@ -24,9 +24,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have 'Angular8-PrimeNG9-sample-application' as title`, () => {
+  it(`should have 'PrimeTime' as title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Angular8-PrimeNG9-sample-application');
+    expect(app.title).toEqual('PrimeTime');
   });
 });

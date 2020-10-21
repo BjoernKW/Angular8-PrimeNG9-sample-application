@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular8-PrimeNG9-sample-application';
+  title = 'PrimeTime';
 }

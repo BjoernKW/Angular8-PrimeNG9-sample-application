@@ -1,3 +1,13 @@
 p-menubar {
   margin: 20px;
 }
+
+h1 {
+  position: absolute;
+  left: 0;
+  margin: 2px 0 0 1em;
+}
+
+:host ::ng-deep .ui-menubar-root-list {
+  padding-left: 10em;
+}

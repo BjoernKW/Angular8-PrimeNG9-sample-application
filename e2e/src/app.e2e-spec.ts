@@ -8,9 +8,14 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
+  it('should display application title', () => {
+    page.navigateTo();
+    expect(page.getTitleText()).toEqual('PrimeTime');
+  });
+
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Angular8-PrimeNG9-sample-application app is running!');
+    expect(page.getWelcomeText()).toEqual('Welcome to PrimeTime!');
   });
 
   afterEach(async () => {
