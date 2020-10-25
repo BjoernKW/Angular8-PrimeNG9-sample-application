@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
+import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.scss']
 })
 export class MainMenuComponent implements OnInit {
+  faCalendarCheck = faCalendarCheck;
 
   items: MenuItem[];
 

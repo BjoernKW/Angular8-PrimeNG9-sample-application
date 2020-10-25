@@ -6,6 +6,7 @@ import { AppMenuComponent } from './app-menu.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MenubarModule } from 'primeng/menubar';
 import { SharedModule } from 'primeng/api';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from 'primeng/api';
     CommonModule,
     AppMenuRoutingModule,
     MenubarModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule
   ],
   exports: [
     MainMenuComponent

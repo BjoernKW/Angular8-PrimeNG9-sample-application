@@ -5,9 +5,13 @@ p-menubar {
 h1 {
   position: absolute;
   left: 0;
-  margin: 2px 0 0 1em;
+  margin: 2px 1rem 0 1rem;
 }
 
 :host ::ng-deep .ui-menubar-root-list {
-  padding-left: 10em;
+  padding-left: 10rem;
+}
+
+:host ::ng-deep .ui-menubar {
+  height: 64px;
 }
