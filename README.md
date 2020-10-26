@@ -32,5 +32,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Credit
-Includes other software released under the [MIT License](https://opensource.org/licenses/MIT):
-* https://github.com/glenasmith/pluralsight-primeng, Copyright (c) 2017 Glen Smith.
+* https://github.com/glenasmith/pluralsight-primeng, [MIT License](https://opensource.org/licenses/MIT), Copyright (c) 2017 Glen Smith.
