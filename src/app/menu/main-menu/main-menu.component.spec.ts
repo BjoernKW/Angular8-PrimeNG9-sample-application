@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MainMenuComponent } from './main-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MenubarModule } from 'primeng/menubar';
+import { MenuModule } from 'primeng/menu';
 
 describe('MainMenuComponent', () => {
   let component: MainMenuComponent;
@@ -15,7 +15,7 @@ describe('MainMenuComponent', () => {
       imports: [
         BrowserAnimationsModule,
         RouterTestingModule,
-        MenubarModule
+        MenuModule
       ]
     })
     .compileComponents();

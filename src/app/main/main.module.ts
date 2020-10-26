@@ -8,6 +8,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StatsComponent } from './stats/stats.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
+import { MainRoutingModule } from './main-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TimesheetComponent } from './timesheet/timesheet.component';
     TimesheetComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MainRoutingModule
   ]
 })
 export class MainModule { }

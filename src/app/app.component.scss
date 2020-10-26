@@ -1,0 +1,23 @@
+#header {
+  background-color: #f0f3f5;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+#header h1 {
+  margin-block-start: auto;
+}
+
+#notifications {
+  color: blue;
+  float: right;
+}
+
+#content-body {
+  padding-top: 120px;
+  position: absolute;
+  left: 190px;
+}

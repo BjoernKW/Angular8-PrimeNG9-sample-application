@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMenuModule } from './menu/app-menu.module';
 import { StartComponent } from './start/start.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StartComponent } from './start/start.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AppMenuModule
+    AppMenuModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,44 @@
-p-menubar {
-  margin: 20px;
+:host ::ng-deep .ui-corner-all {
+  border-radius: 0;
 }
 
-h1 {
-  position: absolute;
-  left: 0;
-  margin: 2px 1rem 0 1rem;
+#sidenav, #sidenav-minified {
+  height: 100%;
+  position: fixed;
+  top: 80px;
+  padding-left: 0;
+  padding-top: 1em;
+  background-color: #2d353c;
 }
 
-:host ::ng-deep .ui-menubar-root-list {
-  padding-left: 10rem;
+#side-gutter {
+  width: 340px;
 }
 
-:host ::ng-deep .ui-menubar {
-  height: 64px;
+#minified-gutter {
+  display:none;
+}
+
+@media only screen and (max-width: 1000px) {
+  #side-gutter {
+    display: none;
+  }
+
+  #minified-gutter {
+    display: block;
+  }
+
+  #content-body {
+    left: 80px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #side-gutter {
+    display: none;
+  }
+
+  #minified-gutter {
+    display: block;
+  }
 }

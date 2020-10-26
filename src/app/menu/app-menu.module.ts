@@ -4,9 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AppMenuRoutingModule } from './app-menu-routing.module';
 import { AppMenuComponent } from './app-menu.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { MenubarModule } from 'primeng/menubar';
 import { SharedModule } from 'primeng/api';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [
@@ -16,9 +15,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     CommonModule,
     AppMenuRoutingModule,
-    MenubarModule,
-    SharedModule,
-    FontAwesomeModule
+    MenuModule,
+    SharedModule
   ],
   exports: [
     MainMenuComponent

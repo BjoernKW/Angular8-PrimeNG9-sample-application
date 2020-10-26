@@ -1,8 +1,11 @@
-<p-menubar [model]="items">
-  <h1>
-    <a routerLink="/">
-      <fa-icon [icon]="faCalendarCheck" size="2x"></fa-icon>
-      PrimeTime
-    </a>
-  </h1>
-</p-menubar>
+<div class="ui-g-2 ui-g-nopad" id="side-gutter">
+  <div id="sidenav">
+    <p-menu [model]="menuItems"></p-menu>
+  </div>
+</div>
+<div class="ui-g-2 ui-g-nopad" id="minified-gutter">
+  <div id="sidenav-minified">
+    <p-menu [model]="minifiedMenuItems"></p-menu>
+  </div>
+</div>
+

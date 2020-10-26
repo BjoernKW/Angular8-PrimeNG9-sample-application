@@ -1,4 +1,24 @@
-<nav>
-  <app-main-menu></app-main-menu>
-</nav>
-<router-outlet></router-outlet>
+<div class="ui-g ui-g-nopad" id="header">
+  <div class="ui-g-10">
+    <h1>
+      <a routerLink="/">
+        <fa-icon [icon]="faCalendarCheck" size="2x"></fa-icon>
+        PrimeTime
+      </a>
+    </h1>
+  </div>
+  <div class="ui-g-2" id="notifications">
+
+  </div>
+</div>
+
+<div class="ui-g ui-g-nopad">
+  <nav>
+    <app-main-menu></app-main-menu>
+  </nav>
+
+  <div id="content-body" class="ui-g-10 ui-g-nopad">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
