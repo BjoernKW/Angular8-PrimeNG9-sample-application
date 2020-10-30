@@ -1,1 +1,39 @@
-<p>dashboard works!</p>
+<div class="ui-g">
+  <app-stats class="ui-g-12 ui-md-6 ui-lg-3" colour="#00ACAC" icon="fa fa-clock-o" label="My Hours"
+             value="132"></app-stats>
+  <app-stats class="ui-g-12 ui-md-6 ui-lg-3" colour="#2F8EE5" icon="fa fa-users" label="Stories"
+             value="35"></app-stats>
+  <app-stats class="ui-g-12 ui-md-6 ui-lg-3" colour="#6C76AF" icon="fa fa-hourglass-half" label="Remaining"
+             value="23"></app-stats>
+  <app-stats class="ui-g-12 ui-md-6 ui-lg-3" colour="#EFA64C" icon="fa fa-area-chart" label="Sprints"
+             value="4"></app-stats>
+</div>
+
+<div class="ui-g">
+  <p-panel class="ui-g-12 ui-md-6" header="Hours By Project (pie)">
+    <p-chart [data]="hoursByProjectChartData" [options]="chartOptions"
+             type="pie"></p-chart>
+  </p-panel>
+  <p-panel class="ui-g-12 ui-md-6" header="Hours By Project (doughnut)">
+    <p-chart [data]="hoursByProjectChartData" type="doughnut"></p-chart>
+  </p-panel>
+</div>
+
+<div class="ui-g">
+  <p-panel class="ui-g-12 ui-md-6" header="Hours By Team (bar)">
+    <p-chart [data]="hoursByTeamChartData" type="bar"></p-chart>
+  </p-panel>
+  <p-panel class="ui-g-12 ui-md-6" header="Hours By Team (line)">
+    <p-chart [data]="hoursByTeamChartData" type="line"></p-chart>
+  </p-panel>
+</div>
+
+<div class="ui-g">
+  <p-panel class="ui-g-12 ui-md-6" header="Hours By Team (radar)">
+    <p-chart [data]="hoursByTeamChartData" height="308" type="radar"></p-chart>
+  </p-panel>
+  <p-panel class="ui-g-12 ui-md-6" header="Hours By Team (mixed)">
+    <p-chart #mixedChart (onDataSelect)="onDataSelect($event)" [data]="hoursByTeamChartDataMixed"
+             type="bar"></p-chart>
+  </p-panel>
+</div>

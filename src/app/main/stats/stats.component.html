@@ -1,1 +1,14 @@
-<p>stats works!</p>
+<div [style.background-color]="colour" class="statistic ui-g">
+  <div class="icon ui-g-5">
+    <i *ngIf="icon" class="fa {{ icon }}"></i>
+  </div>
+
+  <div class="data ui-g-7">
+    <div class="value">
+      {{ value }}
+    </div>
+    <div *ngIf="label" class="label">
+      {{ label }}
+    </div>
+  </div>
+</div>

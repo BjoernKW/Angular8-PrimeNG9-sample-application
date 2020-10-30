@@ -1,1 +1,59 @@
-<p>timesheet works!</p>
+<div class="timesheet header ui-g-12">
+  <h2>
+    {{ day }}
+  </h2>
+  <h3>
+    {{ dateAndMonth }}
+  </h3>
+</div>
+
+<p-tabView (onChange)="onChangeTabs($event)" class="u-g-12 tabs">
+  <p-tabPanel *ngFor="let tab of daysOfWeek" header="{{tab}}">
+    <p-table [value]="getTimesForDay(tab)" class="timesheet-grid">
+    </p-table>
+  </p-tabPanel>
+</p-tabView>
+
+<button (click)="displayEditDialog = true" label="Add Time Entry" pButton></button>
+
+<p-dialog [(visible)]="displayEditDialog" [modal]="true" [ngSwitch]="dialogPageIndex" header="Create Time" width="700">
+  <div class="dialogBody">
+    <p-steps [(activeIndex)]="dialogPageIndex" [model]="dialogPages" [readonly]="false"></p-steps>
+    <div *ngSwitchCase="PageNames.TimePage">
+      <p-fullCalendar [events]="events" styleClass="calendar"></p-fullCalendar>
+    </div>
+    <div *ngSwitchCase="PageNames.ProjectPage">
+      <p-tree [(selection)]="selectedProject" [value]="projectsTree" layout="horizontal"
+              selectionMode="single"></p-tree>
+    </div>
+    <div *ngSwitchCase="PageNames.PlacePage">
+      <p-gmap (onOverlayClick)="onMarkerClick($event)" [options]="mapOptions" [overlays]="mapOverlays"
+              styleClass="gmap"></p-gmap>
+    </div>
+    <div *ngSwitchCase="PageNames.PeoplePage">
+      <p-dataView [paginator]="true" [rows]="4" [value]="people">
+        <ng-template let-person pTemplate="item">
+          <p-panel class="ui-g-12 ui-md-3" header="{{person.firstName}} {{person.lastName}}">
+            <img [pTooltip]="person.email" [src]="person.avatar" alt="avatar" tooltipPosition="bottom">
+          </p-panel>
+        </ng-template>
+      </p-dataView>
+    </div>
+  </div>
+
+  <p-footer>
+    <button (click)="saveNewEntry()" icon="fa fa-check" label="Save" pButton></button>
+    <button (click)="cancelDialog()" class="ui-button-secondary" icon="fa fa-times" label="Cancel" pButton></button>
+  </p-footer>
+</p-dialog>
+
+<p-confirmDialog #confirmDialog [visible]="false" icon="fa fa-question-circle">
+  <p-footer>
+    <button (click)="confirmDialog.reject()" icon="fa fa-close" label="No, go back" pButton type="button"></button>
+    <button (click)="confirmDialog.accept() && confirmDialog.hide()" icon="fa fa-check" label="Yes, lose changes"
+            pButton
+            type="button"></button>
+  </p-footer>
+</p-confirmDialog>
+
+<p-toast></p-toast>

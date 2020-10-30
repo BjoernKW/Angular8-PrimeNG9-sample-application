@@ -1,1 +1,46 @@
-<p>times works!</p>
+<div class="alltimesheets ui-g">
+  <div class="header ui-g-12">
+    <h2>
+      All Timesheets
+    </h2>
+    <h3>
+      Click to edit Users and Projects
+    </h3>
+  </div>
+
+  <p-table #dt
+           (onEditComplete)="onEditComplete($event)"
+           (onLazyLoad)="loadTimes($event)"
+           (onRowSelect)="onRowSelect($event)"
+           [(selection)]="selectedRows"
+           [contextMenu]="tableContextMenu"
+           [lazy]="true"
+           [pageLinks]="8"
+           [paginator]="true"
+           [reorderableColumns]="true"
+           [resizableColumns]="true"
+           [rowsPerPageOptions]="[5,10,15,20]"
+           [rows]="5"
+           [totalRecords]="recordCount"
+           [value]="allTimesheetData"
+           class="ui-g-12"
+           columnResizeMode="fit"
+           exportFilename="users"
+           sortField="startTime"
+           sortOrder="1">
+    <ng-template let-columns pTemplate="header">
+    </ng-template>
+    <ng-template let-columns="columns" let-rowData pTemplate="body">
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      No time entries found
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <label for="tableSearch">Search: </label>
+      <input #tableSearch id="tableSearch" placeholder="Search All The Things" type="text">
+      <button (click)="dt.exportCSV()" icon="fa fa-table" label="Export" pButton style="float:right;"
+              type="button"></button>
+    </ng-template>
+  </p-table>
+  <p-contextMenu #tableContextMenu [model]="contextMenu"></p-contextMenu>
+</div>

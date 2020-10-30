@@ -1,0 +1,44 @@
+.alltimesheets {
+  background-color: white;
+}
+
+.header {
+  padding: 1em;
+  color: white;
+  background-color: #0275D8;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-weight: bolder;
+  font-size: xx-large;
+  display: inline;
+}
+
+h3 {
+  font-weight: lighter;
+  font-size: xx-large;
+  display: inline;
+}
+
+p-table ::ng-deep .ui-datatable-footer {
+  min-height: 60px;
+}
+
+p-table ::ng-deep .ui-datatable-footer input {
+  margin-left: 0.5em;
+  font-size: larger;
+  padding: 3px;
+}
+
+p-table ::ng-deep .ui-datatable-footer {
+  min-height: 60px;
+}
+
+p-table ::ng-deep .selectBoxColumn {
+  width: 43px;
+}
+
+p-contextMenu ::ng-deep .ui-menuitem-active a {
+  background-color: #F15B2A !important;
+}

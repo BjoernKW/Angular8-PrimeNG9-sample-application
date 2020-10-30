@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TimesComponent } from './times.component';
+import { TableModule } from 'primeng/table';
+import { ContextMenuModule } from 'primeng/contextmenu';
 
 describe('TimesComponent', () => {
   let component: TimesComponent;
@@ -8,7 +10,11 @@ describe('TimesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TimesComponent ]
+      declarations: [TimesComponent],
+      imports: [
+        TableModule,
+        ContextMenuModule
+      ]
     })
     .compileComponents();
   }));

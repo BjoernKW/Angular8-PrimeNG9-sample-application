@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
+import { StatsComponent } from '../stats/stats.component.js';
+import { ChartModule } from 'primeng/chart';
+import { PanelModule } from 'primeng/panel';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,7 +12,15 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [
+        DashboardComponent,
+        StatsComponent
+      ],
+      imports: [
+        ChartModule,
+        PanelModule,
+        NoopAnimationsModule
+      ]
     })
     .compileComponents();
   }));

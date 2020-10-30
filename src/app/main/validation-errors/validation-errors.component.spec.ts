@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ValidationErrorsComponent } from './validation-errors.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ValidationErrorsComponent', () => {
   let component: ValidationErrorsComponent;
@@ -8,7 +9,10 @@ describe('ValidationErrorsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ValidationErrorsComponent ]
+      declarations: [ValidationErrorsComponent],
+      imports: [
+        ReactiveFormsModule
+      ]
     })
     .compileComponents();
   }));
