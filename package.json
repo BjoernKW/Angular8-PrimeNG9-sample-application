@@ -27,7 +27,6 @@
     "@fullcalendar/core": "^5.3.1",
     "chart.js": "^2.9.4",
     "dexie": "^3.0.2",
-    "fullcalendar": "^5.3.2",
     "jquery": "^3.5.1",
     "moment": "^2.29.1",
     "primeflex": "^2.0.0",
