@@ -14,23 +14,52 @@ const MAX_EXAMPLE_RECORDS = 1000;
 export class TimesComponent implements OnInit {
 
   // See https://github.com/angular/angular/pull/28810 for rationale behind second @ViewChild parameter
-  @ViewChild("dt", {static: false}) dt: Table;
+  @ViewChild('dt', {static: false}) dt: Table;
 
   db: Dexie;
 
   columns = [
-    {header: 'User', field: 'user'},
-    {header: 'Project', field: 'project'},
-    {header: 'Category', field: 'category'},
-    {header: 'Start Time', field: 'startTime'},
-    {header: 'End Time', field: 'endTime'},
+    {header: 'User', field: 'user', type: 'string'},
+    {header: 'Project', field: 'project', type: 'string'},
+    {header: 'Category', field: 'category', type: 'string'},
+    {header: 'Start Time', field: 'startTime', type: 'time'},
+    {header: 'End Time', field: 'endTime', type: 'time'},
+    {header: 'Date', field: 'date', type: 'date'}
   ]
 
   timesheetData = [
-    {user: 'Glen', project: 'Payroll App', category: 'Backend', startTime: 1000, endTime: 1700, date: 1434243},
-    {user: 'Karen', project: 'Agile Times', category: 'Frontend', startTime: 900, endTime: 1700, date: 1434243},
-    {user: 'Si', project: 'Mobile App', category: 'Operations', startTime: 1100, endTime: 1700, date: 1434243},
-    {user: 'Rohit', project: 'Agile Times', category: 'Backend', startTime: 800, endTime: 1700, date: 1434243}
+    {
+      user: 'Glen',
+      project: 'Payroll App',
+      category: 'Backend',
+      startTime: new Date(),
+      endTime: new Date(),
+      date: new Date()
+    },
+    {
+      user: 'Karen',
+      project: 'Agile Times',
+      category: 'Frontend',
+      startTime: new Date(),
+      endTime: new Date(),
+      date: new Date()
+    },
+    {
+      user: 'Si',
+      project: 'Mobile App',
+      category: 'Operations',
+      startTime: new Date(),
+      endTime: new Date(),
+      date: new Date()
+    },
+    {
+      user: 'Rohit',
+      project: 'Agile Times',
+      category: 'Backend',
+      startTime: new Date(),
+      endTime: new Date(),
+      date: new Date()
+    }
   ];
 
   projectNames = ['', 'Payroll App', 'Mobile App', 'Agile Times'];
@@ -40,10 +69,15 @@ export class TimesComponent implements OnInit {
   });
 
   selectedRows: Array<any>;
+  selectedContextMenuRows: Array<any>;
 
   contextMenu: MenuItem[];
 
   recordCount: number;
+
+  private static _generateRandomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  }
 
   constructor() {
     this.recordCount = this.timesheetData.length;
@@ -54,33 +88,34 @@ export class TimesComponent implements OnInit {
 
   ngOnInit() {
     this.contextMenu = [
-      {label: 'Debug', icon: 'fa fa-bug', command: () => this.onDebug(this.selectedRows)},
-      {label: 'Delete', icon: 'fa fa-close', command: () => this.onDelete(this.selectedRows)}
+      {label: 'Debug', icon: 'fa fa-bug', command: () => this.onDebug(this.selectedContextMenuRows)},
+      {label: 'Delete', icon: 'fa fa-close', command: () => this.onDelete(this.selectedContextMenuRows)}
     ];
   }
 
   generateRandomUser(id: number) {
-    const names = ["Joe", "Mary", "Phil", "Karen", "Si", "Tim", "Rohit", "Jenny", "Kim", "Greg", "Danni"]
+    const names = ['Joe', 'Mary', 'Phil', 'Karen', 'Si', 'Tim', 'Rohit', 'Jenny', 'Kim', 'Greg', 'Danni']
     const allProjectNames = ['Payroll App', 'Mobile App', 'Agile Times'];
     const allCategories = ['Frontend', 'Backend', 'Operations'];
 
-    let newUser = {
+    const startDate = TimesComponent._generateRandomDate(new Date(2020, 0, 1), new Date());
+    startDate.setHours(Math.floor(Math.random() * 4) + 7);
+    const endDate = new Date(startDate);
+    endDate.setHours(Math.floor(Math.random() * 4) + 13);
+
+    return {
       id: id,
       user: names[id % names.length],
       project: allProjectNames[id % allProjectNames.length],
       category: allCategories[id % allCategories.length],
-      startTime: Math.round(Math.random() * 1000),
-      endTime: Math.round(Math.random() * 1000),
-      date: Math.round(Math.random() * 100000)
+      startTime: startDate,
+      endTime: endDate,
+      date: startDate
     };
-    newUser.endTime += newUser.startTime; // to make sure it's later
-
-    return newUser;
-
   }
 
   getRecordCount(): Dexie.Promise<number> {
-    return this.db.table("timesheet").count();
+    return this.db.table('timesheet').count();
   }
 
   resetDatabase() {
@@ -88,12 +123,12 @@ export class TimesComponent implements OnInit {
 
     this.dt.loading = true;
 
-    this.db.table("timesheet").clear().then(() => {
-      console.log("Database Cleared");
+    this.db.table('timesheet').clear().then(() => {
+      console.log('Database Cleared');
       range(0, MAX_EXAMPLE_RECORDS).subscribe(
         function (id) {
           let randomUser = that.generateRandomUser(id);
-          that.db.table("timesheet").add(randomUser);
+          that.db.table('timesheet').add(randomUser);
           if (id % 100 == 0) {
             that.getRecordCount().then((count) => {
               that.recordCount = count;
@@ -102,13 +137,13 @@ export class TimesComponent implements OnInit {
 
         },
         function (err) {
-          console.log("Do Error: %s", err);
+          console.log('Do Error: %s', err);
         },
         function () {
-          console.log("Do complete");
+          console.log('Do complete');
           that.dt.loading = false;
           that.dt.reset();
-          console.log("Finished Reset database");
+          console.log('Finished Reset database');
           that.getRecordCount().then((count) => {
             that.recordCount = count;
           })
@@ -119,18 +154,18 @@ export class TimesComponent implements OnInit {
   loadTimes(event: LazyLoadEvent) {
     console.log(JSON.stringify(event));
 
-    let table = this.db.table("timesheet");
+    let table = this.db.table('timesheet');
 
     let query: any;
 
     // Dexie doesn't support ordering AND filtering, so we branch here
     // Alternative strategies here: https://github.com/dfahlander/Dexie.js/issues/297
-    if (event.filters && event.filters["project"]) {
-      query = table.where("project").equals(event.filters["project"]["value"]);
+    if (event.filters && event.filters['project']) {
+      query = table.where('project').equals(event.filters['project']['value']);
     } else if (event.globalFilter) {
-      query = table.where("project").startsWithIgnoreCase(event.globalFilter)
-        .or("user").startsWithIgnoreCase(event.globalFilter)
-        .or("category").startsWithIgnoreCase(event.globalFilter);
+      query = table.where('project').startsWithIgnoreCase(event.globalFilter)
+        .or('user').startsWithIgnoreCase(event.globalFilter)
+        .or('category').startsWithIgnoreCase(event.globalFilter);
     } else {
       query = table.orderBy(event.sortField);
     }
@@ -144,7 +179,7 @@ export class TimesComponent implements OnInit {
     }
 
     query.toArray((nextBlockOfTimes) => {
-      // console.log("Loaded times: %s", JSON.stringify(nextBlockOfTimes));
+      // console.log('Loaded times: %s', JSON.stringify(nextBlockOfTimes));
       this.timesheetData = nextBlockOfTimes;
     });
   }
@@ -160,7 +195,8 @@ export class TimesComponent implements OnInit {
   }
 
   onEditComplete(editInfo) {
-    const fieldChanged = editInfo.column.field;
+    console.log(editInfo);
+    const fieldChanged = editInfo.field;
     const newRowValues = editInfo.data;
     alert(`You edited ${fieldChanged} to ${newRowValues[fieldChanged]}`);
   }
@@ -171,7 +207,6 @@ export class TimesComponent implements OnInit {
 
   private configureDatabase() {
     this.db = new Dexie('AgileTimes');
-
     this.db.version(1).stores({
       timesheet: 'id,user,project,category,startTime,endTime,date'
     });

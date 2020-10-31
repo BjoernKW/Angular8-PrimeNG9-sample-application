@@ -3,9 +3,6 @@
     <h2>
       Timesheets
     </h2>
-    <h3>
-      Click to edit users and projects
-    </h3>
   </div>
 
   <p-table #dt
@@ -14,6 +11,7 @@
            (onRowSelect)="onRowSelect($event)"
            [columns]="columns"
            [(selection)]="selectedRows"
+           [(contextMenuSelection)]="selectedContextMenuRows"
            [contextMenu]="tableContextMenu"
            [lazy]="true"
            [pageLinks]="8"
@@ -24,7 +22,6 @@
            [rows]="5"
            [totalRecords]="recordCount"
            [value]="timesheetData"
-           selectionMode="multiple"
            class="ui-g-12"
            columnResizeMode="fit"
            exportFilename="users"
@@ -48,10 +45,8 @@
       <tr>
         <th scope="col">&nbsp;</th>
         <th *ngFor="let column of columns"
-            [ngSwitch]="column.field"
-            [pSortableColumn]="column.field"
             scope="col">
-          <ng-container *ngSwitchCase="'project'">
+          <ng-container *ngIf="column.field === 'project'">
             <p-dropdown
               (onChange)="dt.filter($event.value,column.field, 'equals')"
               [options]="projects"
@@ -62,17 +57,48 @@
       </tr>
     </ng-template>
     <ng-template let-rowData let-rowIndex="rowIndex" pTemplate="body">
-      <tr [pSelectableRowIndex]="rowIndex" [pSelectableRow]="rowData">
+      <tr [pContextMenuRow]="rowData">
         <td class="selectBoxColumn">
           <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
         </td>
-        <td *ngFor="let column of columns">
-          {{rowData[column.field]}}
-        </td>
+        <ng-container *ngFor="let column of columns">
+          <td *ngIf="column.field === 'user' || column.field === 'project' else nonEditableColumn"
+              [pEditableColumnField]="column.field"
+              [pEditableColumn]="rowData">
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input *ngIf="column.field === 'user'"
+                       [(ngModel)]="rowData[column.field]"
+                       pInputText
+                       required
+                       type="text">
+                <p-dropdown
+                  *ngIf="column.field === 'project'"
+                  [(ngModel)]="rowData[column.field]"
+                  [options]="projects"
+                  appendTo="body"
+                  required></p-dropdown>
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{rowData[column.field]}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <ng-template #nonEditableColumn>
+            <td [ngSwitch]="column.type">
+              <ng-container *ngSwitchCase="'time'">
+                {{rowData[column.field] | date: 'HH:mm'}}
+              </ng-container>
+              <ng-container *ngSwitchCase="'date'">
+                {{rowData[column.field] | date}}
+              </ng-container>
+              <ng-container *ngSwitchDefault>
+                {{rowData[column.field]}}
+              </ng-container>
+            </td>
+          </ng-template>
+        </ng-container>
       </tr>
-    </ng-template>
-    <ng-template pTemplate="emptymessage">
-      No time entries found
     </ng-template>
     <ng-template pTemplate="summary">
       <label for="tableSearch">Search: </label>

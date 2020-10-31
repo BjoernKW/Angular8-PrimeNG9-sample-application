@@ -63,7 +63,7 @@ describe('ProfileComponent', () => {
 
     fixture.detectChanges();
 
-    expect(component.profileImage).toEqual("http://i.pravatar.cc/300?u=Mary");
+    expect(component.profileImage).toEqual('http://i.pravatar.cc/300?u=Mary');
     let imgElement = fixture.debugElement.query(By.css('#profilePic')).nativeElement;
     expect(imgElement).toBeTruthy();
 

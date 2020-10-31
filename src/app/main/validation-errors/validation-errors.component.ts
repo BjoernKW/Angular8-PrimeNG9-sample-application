@@ -8,9 +8,9 @@ import { FormGroup } from '@angular/forms';
 })
 export class ValidationErrorsComponent implements OnInit {
 
-  @Input("form") form: FormGroup;
-  @Input("field") fieldName: string;
-  @Input("nicename") niceName: string;
+  @Input('form') form: FormGroup;
+  @Input('field') fieldName: string;
+  @Input('nicename') niceName: string;
 
   constructor() {
   }

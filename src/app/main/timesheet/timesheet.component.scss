@@ -25,36 +25,31 @@ h3 {
   display: inline;
 }
 
-.tabs ::ng-deep li {
+:host .tabs ::ng-deep li {
   width: 19%;
 }
 
-.timesheet-grid ::ng-deep .ui-table {
+:host .timesheet-grid ::ng-deep .ui-table {
   margin: 1em;
 }
 
-p-calendar ::ng-deep .calendar {
+:host p-calendar ::ng-deep .calendar {
   height: 250px;
 }
 
-p-gmap ::ng-deep .gmap {
-  width: 100%;
-  height: 300px;
-}
-
-p-steps ::ng-deep .ui-steps-item {
+:host p-steps ::ng-deep .ui-steps-item {
   width: 25%;
 }
 
-p-dataView ::ng-deep .ui-panel {
+:host p-dataView ::ng-deep .ui-panel {
   border: 0;
 }
 
-p-dataView ::ng-deep .ui-panel-content {
+:host p-dataView ::ng-deep .ui-panel-content {
   padding: 0;
 }
 
-p-dataView ::ng-deep .ui-panel-content img {
+:host p-dataView ::ng-deep .ui-panel-content img {
   display: block;
   margin-left: auto;
   margin-right: auto;

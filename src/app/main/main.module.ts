@@ -32,7 +32,6 @@ import { ContextMenuModule } from 'primeng/contextmenu';
 import { TabViewModule } from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { StepsModule } from 'primeng/steps';
-import { GMapModule } from 'primeng/gmap';
 import { TreeModule } from 'primeng/tree';
 import { TooltipModule } from 'primeng/tooltip';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -40,8 +39,8 @@ import { ToastModule } from 'primeng/toast';
 import { DragDropModule } from 'primeng/dragdrop';
 import { GalleriaModule } from 'primeng/galleria';
 import { DataViewModule } from 'primeng/dataview';
-import { FullCalendarModule } from 'primeng/fullcalendar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -83,14 +82,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DialogModule,
     StepsModule,
     TreeModule,
-    GMapModule,
     TooltipModule,
     ConfirmDialogModule,
     ToastModule,
     DragDropModule,
     GalleriaModule,
-    DataViewModule,
-    FullCalendarModule
+    DataViewModule
+  ],
+  providers: [
+    ConfirmationService,
+    MessageService
   ]
 })
 export class MainModule { }

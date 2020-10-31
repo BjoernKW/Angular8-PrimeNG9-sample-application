@@ -39,7 +39,7 @@ h3 {
   width: 43px;
 }
 
-p-contextMenu ::ng-deep .ui-menuitem-active a {
+:host p-contextMenu ::ng-deep .ui-menuitem-active a {
   background-color: #F15B2A !important;
 }
 
@@ -47,6 +47,6 @@ p-contextMenu ::ng-deep .ui-menuitem-active a {
   margin-left: 1rem;
 }
 
-p-table ::ng-deep .ui-table thead tr:nth-child(even) .ui-sortable-column.ui-state-highlight {
+:host p-table ::ng-deep .ui-table thead tr:nth-child(even) .ui-sortable-column.ui-state-highlight {
   background-color: #f4f4f4;
 }

@@ -1,4 +1,4 @@
-p-panel ::ng-deep .ui-panel {
+:host p-panel ::ng-deep .ui-panel {
   margin-top: 1em;
   width: 98%;
   min-height: 300px;
@@ -8,8 +8,7 @@ p-panel ::ng-deep .ui-panel {
   padding: 4px;
 }
 
-#statistic {
-
+#stats {
   width: 300px;
   color: white;
   text-align: center;

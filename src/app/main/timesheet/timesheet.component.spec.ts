@@ -5,10 +5,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { StepsModule } from 'primeng/steps';
-import { FullCalendarModule } from 'primeng/fullcalendar';
 import { TreeModule } from 'primeng/tree';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { GMapModule } from 'primeng/gmap';
 import { DataViewModule } from 'primeng/dataview';
 import { PanelModule } from 'primeng/panel';
 import { TooltipModule } from 'primeng/tooltip';
@@ -28,10 +26,8 @@ describe('TimesheetComponent', () => {
         TableModule,
         DialogModule,
         StepsModule,
-        FullCalendarModule,
         TreeModule,
         NoopAnimationsModule,
-        GMapModule,
         PanelModule,
         DataViewModule,
         TooltipModule,

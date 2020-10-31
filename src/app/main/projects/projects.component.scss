@@ -15,11 +15,11 @@ p-radioButton {
   margin: .7em;
 }
 
-p-listbox ::ng-deep .ui-listbox {
+:host p-listbox ::ng-deep .ui-listbox {
   width: 100%;
 }
 
-p-listbox ::ng-deep .ui-listbox-list-wrapper {
+:host p-listbox ::ng-deep .ui-listbox-list-wrapper {
   height: 250px;
 }
 

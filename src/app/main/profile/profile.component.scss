@@ -21,14 +21,13 @@ h3 {
   display: inline;
 }
 
-p-panel ::ng-deep .ui-panel-content {
+:host p-panel ::ng-deep .ui-panel-content {
   height: 320px;
 }
 
 p-panel img {
   width: 100%;
 }
-
 
 #drop-message {
   font-size: xx-large;
@@ -39,5 +38,3 @@ p-panel img {
   border: 3px solid #2D353C;
   text-align: center;
 }
-
-
