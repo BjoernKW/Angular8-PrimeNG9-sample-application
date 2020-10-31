@@ -19,7 +19,7 @@ export class ValidationErrorsComponent implements OnInit {
   }
 
   fieldErrors(field: string) {
-    let controlState = this.form.controls[field];
-    return (controlState.dirty && controlState.errors) ? controlState.errors : null;
+    const controlState = this.form.controls[field];
+    return (controlState && controlState.dirty && controlState.errors) ? controlState.errors : null;
   }
 }

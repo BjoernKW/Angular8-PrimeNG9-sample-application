@@ -3,6 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TimesComponent } from './times.component';
 import { TableModule } from 'primeng/table';
 import { ContextMenuModule } from 'primeng/contextmenu';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
 
 describe('TimesComponent', () => {
   let component: TimesComponent;
@@ -13,7 +15,9 @@ describe('TimesComponent', () => {
       declarations: [TimesComponent],
       imports: [
         TableModule,
-        ContextMenuModule
+        ContextMenuModule,
+        DropdownModule,
+        FormsModule
       ]
     })
     .compileComponents();
