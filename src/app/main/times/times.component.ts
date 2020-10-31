@@ -18,17 +18,25 @@ export class TimesComponent implements OnInit {
 
   db: Dexie;
 
-  allTimesheetData = [
+  columns = [
+    {header: 'User', field: 'user'},
+    {header: 'Project', field: 'project'},
+    {header: 'Category', field: 'category'},
+    {header: 'Start Time', field: 'startTime'},
+    {header: 'End Time', field: 'endTime'},
+  ]
+
+  timesheetData = [
     {user: 'Glen', project: 'Payroll App', category: 'Backend', startTime: 1000, endTime: 1700, date: 1434243},
     {user: 'Karen', project: 'Agile Times', category: 'Frontend', startTime: 900, endTime: 1700, date: 1434243},
     {user: 'Si', project: 'Mobile App', category: 'Operations', startTime: 1100, endTime: 1700, date: 1434243},
-    {user: 'Rohit', project: 'Agile Times', category: 'Backend', startTime: 800, endTime: 1700, date: 1434243},
+    {user: 'Rohit', project: 'Agile Times', category: 'Backend', startTime: 800, endTime: 1700, date: 1434243}
   ];
 
-  allProjectNames = ['', 'Payroll App', 'Mobile App', 'Agile Times'];
+  projectNames = ['', 'Payroll App', 'Mobile App', 'Agile Times'];
 
-  allProjects = this.allProjectNames.map((proj) => {
-    return {label: proj, value: proj}
+  projects = this.projectNames.map((project) => {
+    return {label: project !== '' ? project : 'all', value: project}
   });
 
   selectedRows: Array<any>;
@@ -38,7 +46,7 @@ export class TimesComponent implements OnInit {
   recordCount: number;
 
   constructor() {
-    this.recordCount = this.allTimesheetData.length;
+    this.recordCount = this.timesheetData.length;
 
     this.configureDatabase();
     this.populateDatabase();
@@ -46,8 +54,8 @@ export class TimesComponent implements OnInit {
 
   ngOnInit() {
     this.contextMenu = [
-      {label: 'Debug', icon: 'fa fa-bug', command: (event) => this.onDebug(this.selectedRows)},
-      {label: 'Delete', icon: 'fa fa-close', command: (event) => this.onDelete(this.selectedRows)}
+      {label: 'Debug', icon: 'fa fa-bug', command: () => this.onDebug(this.selectedRows)},
+      {label: 'Delete', icon: 'fa fa-close', command: () => this.onDelete(this.selectedRows)}
     ];
   }
 
@@ -137,7 +145,7 @@ export class TimesComponent implements OnInit {
 
     query.toArray((nextBlockOfTimes) => {
       // console.log("Loaded times: %s", JSON.stringify(nextBlockOfTimes));
-      this.allTimesheetData = nextBlockOfTimes;
+      this.timesheetData = nextBlockOfTimes;
     });
   }
 
@@ -146,7 +154,7 @@ export class TimesComponent implements OnInit {
   }
 
   onDelete(selectedRows: any) {
-    this.allTimesheetData = this.allTimesheetData.filter((row) => {
+    this.timesheetData = this.timesheetData.filter((row) => {
       return !selectedRows.includes(row);
     });
   }

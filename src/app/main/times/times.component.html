@@ -1,10 +1,10 @@
 <div class="alltimesheets ui-g">
   <div class="header ui-g-12">
     <h2>
-      All Timesheets
+      Timesheets
     </h2>
     <h3>
-      Click to edit Users and Projects
+      Click to edit users and projects
     </h3>
   </div>
 
@@ -12,6 +12,7 @@
            (onEditComplete)="onEditComplete($event)"
            (onLazyLoad)="loadTimes($event)"
            (onRowSelect)="onRowSelect($event)"
+           [columns]="columns"
            [(selection)]="selectedRows"
            [contextMenu]="tableContextMenu"
            [lazy]="true"
@@ -22,23 +23,70 @@
            [rowsPerPageOptions]="[5,10,15,20]"
            [rows]="5"
            [totalRecords]="recordCount"
-           [value]="allTimesheetData"
+           [value]="timesheetData"
+           selectionMode="multiple"
            class="ui-g-12"
            columnResizeMode="fit"
            exportFilename="users"
            sortField="startTime"
            sortOrder="1">
-    <ng-template let-columns pTemplate="header">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="selectBoxColumn" scope="col">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th *ngFor="let column of columns"
+            [pSortableColumn]="column.field"
+            scope="col">
+          {{column.header}}
+          <p-sortIcon [field]="column.field"
+                      ariaLabel="Activate to sort"
+                      ariaLabelAsc="Activate to sort in ascending order"
+                      ariaLabelDesc="Activate to sort in descending order"></p-sortIcon>
+        </th>
+      </tr>
+      <tr>
+        <th scope="col">&nbsp;</th>
+        <th *ngFor="let column of columns"
+            [ngSwitch]="column.field"
+            [pSortableColumn]="column.field"
+            scope="col">
+          <ng-container *ngSwitchCase="'project'">
+            <p-dropdown
+              (onChange)="dt.filter($event.value,column.field, 'equals')"
+              [options]="projects"
+              appendTo="body"
+              styleClass="p-column-filter"></p-dropdown>
+          </ng-container>
+        </th>
+      </tr>
     </ng-template>
-    <ng-template let-columns="columns" let-rowData pTemplate="body">
+    <ng-template let-rowData let-rowIndex="rowIndex" pTemplate="body">
+      <tr [pSelectableRowIndex]="rowIndex" [pSelectableRow]="rowData">
+        <td class="selectBoxColumn">
+          <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+        </td>
+        <td *ngFor="let column of columns">
+          {{rowData[column.field]}}
+        </td>
+      </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">
       No time entries found
     </ng-template>
-    <ng-template pTemplate="footer">
+    <ng-template pTemplate="summary">
       <label for="tableSearch">Search: </label>
-      <input #tableSearch id="tableSearch" placeholder="Search All The Things" type="text">
-      <button (click)="dt.exportCSV()" icon="fa fa-table" label="Export" pButton style="float:right;"
+      <input
+        (input)="dt.filterGlobal($event.target.value, 'contains')"
+        id="tableSearch"
+        pInputText
+        placeholder="Enter search query"
+        type="text">
+      <button (click)="dt.exportCSV()"
+              class="ml-1"
+              icon="fa fa-table"
+              label="Export"
+              pButton
               type="button"></button>
     </ng-template>
   </p-table>

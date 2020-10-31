@@ -21,24 +21,32 @@ h3 {
   display: inline;
 }
 
-p-table ::ng-deep .ui-datatable-footer {
+:host ::ng-deep .ui-table-summar {
   min-height: 60px;
 }
 
-p-table ::ng-deep .ui-datatable-footer input {
+:host ::ng-deep .ui-table-summary input {
   margin-left: 0.5em;
   font-size: larger;
   padding: 3px;
 }
 
-p-table ::ng-deep .ui-datatable-footer {
+:host ::ng-deep .ui-table-summary {
   min-height: 60px;
 }
 
-p-table ::ng-deep .selectBoxColumn {
+.selectBoxColumn {
   width: 43px;
 }
 
 p-contextMenu ::ng-deep .ui-menuitem-active a {
   background-color: #F15B2A !important;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+p-table ::ng-deep .ui-table thead tr:nth-child(even) .ui-sortable-column.ui-state-highlight {
+  background-color: #f4f4f4;
 }
