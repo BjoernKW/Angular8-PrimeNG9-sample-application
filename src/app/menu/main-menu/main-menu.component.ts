@@ -18,7 +18,7 @@ export class MainMenuComponent implements OnInit {
       {
         label: 'Main',
         items: [
-          {label: 'Dashboard', icon: 'fa fa-home', routerLink: ['/main/dashboard']},
+          {label: 'Dashboard', icon: 'pi-fw fa fa-home', routerLink: ['/main/dashboard']},
           {
             label: 'Times',
             icon: 'fa fa-calendar',
@@ -29,8 +29,8 @@ export class MainMenuComponent implements OnInit {
             icon: 'fa fa-clock',
             routerLink: ['/main/timesheet'],
           },
-          {label: 'Projects', icon: 'fa fa-tasks', routerLink: ['/main/projects']},
-          {label: 'Settings', icon: 'fas fa-sliders-h', routerLink: ['/main/settings']},
+          {label: 'Projects', icon: 'pi-fw fa fa-tasks', routerLink: ['/main/projects']},
+          {label: 'Settings', icon: 'pi-fw fas fa-sliders-h', routerLink: ['/main/settings']},
         ]
       },
       {
@@ -40,7 +40,8 @@ export class MainMenuComponent implements OnInit {
           {label: 'AutoComplete', icon: 'pi pi-fw pi-search-plus', routerLink: '/form/auto-complete'},
           {label: 'Calendar', icon: 'pi pi-fw pi-calendar', routerLink: '/form/calendar'},
           {label: 'Inputs', icon: 'pi pi-fw pi-sliders-h', routerLink: '/form/inputs'},
-          {label: 'Table', icon: 'pi pi-fw pi-table', routerLink: '/data/table'}
+          {label: 'Table', icon: 'pi pi-fw pi-table', routerLink: '/data/table'},
+          {label: 'Complex table', icon: 'pi-fw fas fa-database', routerLink: '/data/complex-table'}
         ]
       }
     ];

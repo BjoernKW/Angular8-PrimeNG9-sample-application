@@ -68,3 +68,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Credits
 Includes software from the following resources:
 * https://github.com/glenasmith/pluralsight-primeng, released under the [MIT License](https://opensource.org/licenses/MIT), Copyright (c) 2017 Glen Smith.
+* https://github.com/primefaces/primeng, released under the [MIT License](https://opensource.org/licenses/MIT), Copyright (c) 2016-2020 PrimeTek.

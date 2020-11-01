@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DataComponent } from './data.component';
 import { TableComponent } from './table/table.component';
+import { ComplexTableComponent } from './complex-table/complex-table.component';
 
 const routes: Routes = [
-  { path: '', component: DataComponent },
-  { path: 'table', component: TableComponent}
+  {path: '', redirectTo: '/table', pathMatch: 'full'},
+  {path: 'table', component: TableComponent},
+  {path: 'complex-table', component: ComplexTableComponent}
 ];
 
 @NgModule({
