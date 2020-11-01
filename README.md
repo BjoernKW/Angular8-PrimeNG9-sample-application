@@ -35,10 +35,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Resources
 
-### Angular & PrimeNG
-
-* [Angular :host, :host-context, ::ng-deep - Angular View Encapsulation](https://blog.angular-university.io/angular-host-context/)
-
 ### Design
 
 * [A guide to the Golden Ratio for designers](https://www.invisionapp.com/inside-design/golden-ratio-designers/)
@@ -60,10 +56,38 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * [CSS Properties Index](https://meiert.com/en/indices/css-properties/)
 * [Common CSS Properties Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)
 
-#### CSS grid systems
+#### CSS grid systems & Flexbox
 
 * [Fluid Grids by Ethan Marcotte](https://alistapart.com/article/fluidgrids/)
 * [Don’t Overthink It Grids](https://css-tricks.com/dont-overthink-it-grids/)
+* [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [Flexbox vs. CSS Grid: Which Should You Use and When?](https://webdesign.tutsplus.com/articles/flexbox-vs-css-grid-which-should-you-use--cms-30184)
+* [Should I use Grid or Flexbox?](https://rachelandrew.co.uk/archives/2016/03/30/should-i-use-grid-or-flexbox/)
+* [Does CSS Grid Replace Flexbox?](https://css-tricks.com/css-grid-replace-flexbox/)
+
+### Angular & PrimeNG
+
+* [Angular :host, :host-context, ::ng-deep - Angular View Encapsulation](https://blog.angular-university.io/angular-host-context/)
+
+### PrimeNG and CSS
+
+#### Common PrimeNG styling questions (and answers) on Stack Overflow
+* https://stackoverflow.com/questions/49790092/prime-ng-auto-complete-css-style-applying
+* https://stackoverflow.com/questions/46350302/primeng-how-to-use-styleclass
+* https://stackoverflow.com/questions/59627838/primeng-table-p-table-column-and-data-overlapping-issue-on-browser-window-resizi
+* https://stackoverflow.com/questions/49493888/change-primeng-panelmenu-styles
+* https://stackoverflow.com/questions/41354416/primeng-p-dropdown-stretch-100/41374306#41374306
+* https://stackoverflow.com/questions/57191749/how-to-increase-width-of-ptooltip-in-primeng
+* https://stackoverflow.com/questions/43282053/primeng-p-datatable-height-set-by-number-of-rows/45305591#45305591
+* https://stackoverflow.com/questions/63332598/when-zoom-in-browser-cause-one-div-container-expand-how-to-adjust-other-div-con
+* https://stackoverflow.com/questions/46033307/overflow-text-in-primeng-datatabel-cell
+* https://stackoverflow.com/questions/57768227/sticky-header-not-working-with-resizable-column-in-primeng/57809413#57809413
+* https://stackoverflow.com/questions/51600175/primeng-accordion-doesnt-work-and-display-properly
+* https://stackoverflow.com/questions/47444899/primeng-make-scrollable-datatable-height-responsive
+* https://stackoverflow.com/questions/41721523/overflow-the-primeng-dialogmodule-with-the-calendarmodule/41764764#41764764
+* https://stackoverflow.com/questions/56046857/how-to-fit-p-dropdown-inside-of-a-table-cell
+* https://stackoverflow.com/questions/44148075/primeng-styling-size-and-alignment-of-p-panel
 
 ## Credits
 Includes software from the following resources:
