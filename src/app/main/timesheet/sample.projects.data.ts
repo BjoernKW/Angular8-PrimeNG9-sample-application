@@ -15,7 +15,7 @@ export class SampleProjectsData {
           'expandedIcon': 'fa fa-folder-open',
           'collapsedIcon': 'fa fa-folder',
           'children': [
-            {'label': 'Frontend', 'icon': 'fa fa-chrome', 'data': 'fe'},
+            {'label': 'Frontend', 'icon': 'fas fa-code', 'data': 'fe'},
             {'label': 'Backend', 'icon': 'fa fa-cloud', 'data': 'be'},
             {'label': 'Operations', 'icon': 'fa fa-cogs', 'data': 'ops'}
           ]
@@ -27,7 +27,7 @@ export class SampleProjectsData {
           'collapsedIcon': 'fa fa-folder',
           'selectable': false,
           'children': [
-            {'label': 'Frontend', 'icon': 'fa fa-chrome', 'data': 'fe'},
+            {'label': 'Frontend', 'icon': 'fas fa-code', 'data': 'fe'},
             {'label': 'Backend', 'icon': 'fa fa-cloud', 'data': 'be'},
             {'label': 'Operations', 'icon': 'fa fa-cogs', 'data': 'ops'}
           ]

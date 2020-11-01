@@ -5,7 +5,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TimesComponent } from './times/times.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
@@ -14,7 +13,6 @@ const routes: Routes = [
   {path: 'times', component: TimesComponent},
   {path: 'timesheet', component: TimesheetComponent},
   {path: 'projects', component: ProjectsComponent},
-  {path: 'profile', component: ProfileComponent},
   {path: 'settings', component: SettingsComponent}
 ];
 

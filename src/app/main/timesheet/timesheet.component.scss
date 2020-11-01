@@ -55,3 +55,7 @@ h3 {
   margin-right: auto;
   width: 144px;
 }
+
+:host ::ng-deep .displayEditDialog {
+  width: 50vw;
+}

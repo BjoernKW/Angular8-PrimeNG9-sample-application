@@ -31,18 +31,26 @@
 
 <button (click)="displayEditDialog = true" label="Add Time Entry" pButton></button>
 
-<p-dialog [(visible)]="displayEditDialog" [modal]="true" [ngSwitch]="dialogPageIndex" header="Create Time" width="700">
+<p-dialog [(visible)]="displayEditDialog"
+          [modal]="true"
+          [ngSwitch]="dialogPageIndex"
+          header="Create Time"
+          styleClass="displayEditDialog">
   <div class="dialogBody">
     <p-steps [(activeIndex)]="dialogPageIndex" [model]="dialogPages" [readonly]="false"></p-steps>
     <div *ngSwitchCase="PageNames.TimePage">
+      <p-calendar [(ngModel)]="selectedDate"
+                  appendTo="body"></p-calendar>
     </div>
     <div *ngSwitchCase="PageNames.ProjectPage">
-      <p-tree [(selection)]="selectedProject" [value]="projectsTree" layout="horizontal"
+      <p-tree [(selection)]="selectedProject"
+              [value]="projectsTree"
+              layout="horizontal"
               selectionMode="single"></p-tree>
     </div>
     <div *ngSwitchCase="PageNames.PeoplePage">
       <p-dataView [paginator]="true" [rows]="4" [value]="people">
-        <ng-template let-person pTemplate="item">
+        <ng-template let-person pTemplate="listItem">
           <p-panel class="ui-g-12 ui-md-3" header="{{person.firstName}} {{person.lastName}}">
             <img [pTooltip]="person.email" [src]="person.avatar" alt="avatar" tooltipPosition="bottom">
           </p-panel>

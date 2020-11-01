@@ -30,7 +30,6 @@ export class MainMenuComponent implements OnInit {
             routerLink: ['/main/timesheet'],
           },
           {label: 'Projects', icon: 'fa fa-tasks', routerLink: ['/main/projects']},
-          {label: 'Profile', icon: 'fa fa-users', routerLink: ['/main/profile']},
           {label: 'Settings', icon: 'fas fa-sliders-h', routerLink: ['/main/settings']},
         ]
       },

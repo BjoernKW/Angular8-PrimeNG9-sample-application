@@ -13,6 +13,8 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { CalendarModule } from 'primeng/calendar';
+import { FormsModule } from '@angular/forms';
 
 describe('TimesheetComponent', () => {
   let component: TimesheetComponent;
@@ -22,6 +24,7 @@ describe('TimesheetComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TimesheetComponent],
       imports: [
+        FormsModule,
         TabViewModule,
         TableModule,
         DialogModule,
@@ -32,6 +35,7 @@ describe('TimesheetComponent', () => {
         DataViewModule,
         TooltipModule,
         ConfirmDialogModule,
+        CalendarModule,
         ToastModule
       ],
       providers: [

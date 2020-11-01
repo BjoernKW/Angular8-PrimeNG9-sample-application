@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfirmationService, MenuItem, Message, TreeNode } from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService, TreeNode } from 'primeng/api';
 import { SampleProjectsData } from './sample.projects.data.js';
 import { SamplePeopleData } from './sample.people.data.js';
 
@@ -31,8 +31,8 @@ export class TimesheetComponent implements OnInit {
   ];
   projectsTree: TreeNode[] = SampleProjectsData.projects;
   people = SamplePeopleData.people;
+  selectedDate = new Date();
   selectedProject: TreeNode;
-  messages: Message[] = [];
   day = 'Monday';
   dateAndMonth;
 
@@ -52,7 +52,10 @@ export class TimesheetComponent implements OnInit {
     {day: 'Friday', startTime: '9:00', endTime: '17:00', project: 'Agile Times', category: 'Requirements'},
   ]
 
-  constructor(private _confirmationService: ConfirmationService) {
+  constructor(
+    private _messageService: MessageService,
+    private _confirmationService: ConfirmationService
+  ) {
   }
 
   ngOnInit() {
@@ -77,10 +80,10 @@ export class TimesheetComponent implements OnInit {
       message: 'Cancel all changes. Are you sure?',
       accept: () => {
         this.displayEditDialog = false;
-        this.messages.push({severity: 'info', summary: 'Edits Cancelled', detail: 'No changes were saved'});
+        this._messageService.add({severity: 'info', summary: 'Cancelled', detail: 'No changes were saved'});
       },
       reject: () => {
-        this.messages.push({severity: 'warn', summary: 'Cancelled the Cancel', detail: 'Please continue your editing'});
+        this._messageService.add({severity: 'warn', summary: 'Continue', detail: 'Please continue your editing'});
         console.log('False cancel. Just keep editing.');
       }
     });
@@ -88,7 +91,7 @@ export class TimesheetComponent implements OnInit {
 
   saveNewEntry() {
     this.displayEditDialog = false;
-    this.messages.push({severity: 'success', summary: 'Entry Created', detail: 'Your entry has been created'});
+    this._messageService.add({severity: 'success', summary: 'Entry created', detail: 'Your entry has been created'});
   }
 
   initializeValues() {
