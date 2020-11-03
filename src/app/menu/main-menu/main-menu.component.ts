@@ -18,7 +18,7 @@ export class MainMenuComponent implements OnInit {
       {
         label: 'Main',
         items: [
-          {label: 'Dashboard', icon: 'pi-fw fa fa-home', routerLink: ['/main/dashboard']},
+          {label: 'Dashboard', icon: 'fa fa-home', routerLink: ['/main/dashboard']},
           {
             label: 'Times',
             icon: 'fa fa-calendar',
@@ -41,7 +41,11 @@ export class MainMenuComponent implements OnInit {
           {label: 'Calendar', icon: 'pi pi-fw pi-calendar', routerLink: '/form/calendar'},
           {label: 'Inputs', icon: 'pi pi-fw pi-sliders-h', routerLink: '/form/inputs'},
           {label: 'Table', icon: 'pi pi-fw pi-table', routerLink: '/data/table'},
-          {label: 'Complex table', icon: 'pi-fw fas fa-database', routerLink: '/data/complex-table'}
+          {label: 'Complex table', icon: 'pi-fw fas fa-table', routerLink: '/data/complex-table'},
+          {label: 'Tree table', icon: 'pi-fw fas fa-chevron-down', routerLink: '/data/tree-table'},
+          {label: 'Data view', icon: 'pi-fw fas fa-database', routerLink: '/data/data-view'},
+          {label: 'Pick list', icon: 'pi-fw fas fa-list', routerLink: '/data/pick-list'},
+          {label: 'Tab view', icon: 'pi-fw fas fa-ellipsis-h', routerLink: '/misc/tab-view'}
         ]
       }
     ];

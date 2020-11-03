@@ -80,10 +80,18 @@ export class TimesheetComponent implements OnInit {
       message: 'Cancel all changes. Are you sure?',
       accept: () => {
         this.displayEditDialog = false;
-        this._messageService.add({severity: 'info', summary: 'Cancelled', detail: 'No changes were saved'});
+        this._messageService.add({
+          severity: 'info',
+          summary: 'Cancelled',
+          detail: 'No changes were saved'
+        });
       },
       reject: () => {
-        this._messageService.add({severity: 'warn', summary: 'Continue', detail: 'Please continue your editing'});
+        this._messageService.add({
+          severity: 'warn',
+          summary: 'Continue',
+          detail: 'Please continue your editing'
+        });
         console.log('False cancel. Just keep editing.');
       }
     });
@@ -91,7 +99,11 @@ export class TimesheetComponent implements OnInit {
 
   saveNewEntry() {
     this.displayEditDialog = false;
-    this._messageService.add({severity: 'success', summary: 'Entry created', detail: 'Your entry has been created'});
+    this._messageService.add({
+      severity: 'success',
+      summary: 'Entry created',
+      detail: 'Your entry has been created'
+    });
   }
 
   initializeValues() {

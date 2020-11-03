@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../data/service/product.service';
+import { ItemService } from '../../data/service/item.service';
 import { Product } from '../../data/model/product';
 
 @Component({
@@ -13,7 +13,7 @@ export class AutoCompleteComponent implements OnInit {
   results: Product[];
 
   constructor(
-    private _productService: ProductService
+    private _productService: ItemService
   ) { }
 
   search(event) {

@@ -11,11 +11,21 @@ import { CalendarModule } from 'primeng/calendar';
 import { HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { DataViewModule } from 'primeng/dataview';
+import { PickListModule } from 'primeng/picklist';
+import { DataViewComponent } from './data-view/data-view.component';
+import { PickListComponent } from './pick-list/pick-list.component';
+import { TreeTableComponent } from './tree-table/tree-table.component';
+import { TreeTableModule } from 'primeng/treetable';
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   declarations: [
     TableComponent,
-    ComplexTableComponent
+    ComplexTableComponent,
+    DataViewComponent,
+    PickListComponent,
+    TreeTableComponent
   ],
   imports: [
     CommonModule,
@@ -27,11 +37,11 @@ import { ProgressBarModule } from 'primeng/progressbar';
     CalendarModule,
     DropdownModule,
     ProgressBarModule,
-    HttpClientModule
-  ],
-  exports: [
-    TableComponent,
-    ComplexTableComponent
+    DataViewModule,
+    PickListModule,
+    TreeTableModule,
+    RatingModule,
+    HttpClientModule,
   ]
 })
 export class DataModule { }

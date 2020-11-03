@@ -16,7 +16,11 @@
 }
 
 #minified-gutter {
-  display:none;
+  display: none;
+}
+
+:host ::ng-deep .ui-menuitem-link-active {
+  background-color: #249d77 !important;
 }
 
 @media only screen and (max-width: 1000px) {

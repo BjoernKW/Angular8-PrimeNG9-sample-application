@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../service/product.service';
+import { ItemService } from '../service/item.service';
 import { Product } from '../model/product';
 
 @Component({
@@ -11,7 +11,8 @@ export class TableComponent implements OnInit {
 
   products: Product[];
 
-  constructor(private _productService: ProductService) { }
+  constructor(private _productService: ItemService) {
+  }
 
   ngOnInit() {
     this._productService

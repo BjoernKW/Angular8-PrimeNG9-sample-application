@@ -7,8 +7,11 @@
   <ng-template pTemplate="caption">
     List of Cars
     <div class="ui-table-globalfilter-container">
-      <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText placeholder="Global Search"
-             type="text"/>
+      <input (input)="dt.filterGlobal($event.target.value, 'contains')"
+             class="ui-inputtext ui-corner-all"
+             pInputText
+             placeholder="Global Search"
+             type="text">
     </div>
   </ng-template>
   <ng-template pTemplate="header">
@@ -38,31 +41,39 @@
       <th>
         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
       </th>
-      <th>
-        <input (input)="dt.filter($event.target.value, 'name', 'startsWith')" class="ui-column-filter" pInputText
-               placeholder="Search by Name" type="text">
+      <th scope="col">
+        <div class="ui-column-filter">
+          <input (input)="dt.filter($event.target.value, 'name', 'startsWith')"
+                 class="ui-inputtext ui-corner-all"
+                 pInputText
+                 placeholder="Search by Name" type="text">
+        </div>
       </th>
-      <th>
-        <input (input)="dt.filter($event.target.value, 'country.name', 'contains')" class="ui-column-filter" pInputText
-               placeholder="Search by Country" type="text">
+      <th scope="col">
+        <div class="ui-column-filter">
+          <input (input)="dt.filter($event.target.value, 'country.name', 'contains')"
+                 class="ui-inputtext ui-corner-all"
+                 pInputText
+                 placeholder="Search by Country" type="text">
+        </div>
       </th>
-      <th>
+      <th scope="col">
         <p-multiSelect (onChange)="onRepresentativeChange($event)" [options]="representatives" optionLabel="name"
                        placeholder="All" styleClass="ui-column-filter">
           <ng-template let-option pTemplate="item">
             <div class="ui-multiselect-representative-option">
-              <img [alt]="option.label" src="assets/images/avatar/{{option.value.image}}" width="32"/>
+              <img [alt]="option.label" src="assets/images/avatar/{{option.value.image}}" width="32">
               <span>{{option.label}}</span>
             </div>
           </ng-template>
         </p-multiSelect>
       </th>
-      <th>
+      <th scope="col">
         <p-calendar (onClearClick)="dt.filter('', 'date', 'equals')" (onSelect)="onDateSelect($event)"
                     [readonlyInput]="true" [showButtonBar]="true" dateFormat="yy-mm-dd" placeholder="Registration Date"
                     styleClass="ui-column-filter"></p-calendar>
       </th>
-      <th>
+      <th scope="col">
         <p-dropdown (onChange)="dt.filter($event.value, 'status', 'equals')" [options]="statuses" [showClear]="true"
                     placeholder="Select a Status" styleClass="ui-column-filter">
           <ng-template let-option pTemplate="item">
@@ -70,8 +81,14 @@
           </ng-template>
         </p-dropdown>
       </th>
-      <th>
-        <input (input)="onActivityChange($event)" class="ui-column-filter" pInputText placeholder="Minimum" type="text">
+      <th scope="col">
+        <div class="ui-column-filter">
+          <input (input)="onActivityChange($event)"
+                 class="ui-inputtext ui-corner-all"
+                 pInputText
+                 placeholder="Minimum"
+                 type="text">
+        </div>
       </th>
       <th></th>
     </tr>
@@ -93,7 +110,7 @@
       <td>
         <span class="ui-column-title">Representative</span>
         <img [alt]="customer.representative.name" src="assets/images/avatar/{{customer.representative.image}}"
-             style="vertical-align: middle" width="32"/>
+             style="vertical-align: middle" width="32">
         <span style="vertical-align: middle; margin-left: .5em">{{customer.representative.name}}</span>
       </td>
       <td>

@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ProductService } from './product.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NodeService } from './node.service';
 
-describe('ProductService', () => {
+describe('NodeService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [
       HttpClientTestingModule
@@ -11,7 +11,7 @@ describe('ProductService', () => {
   }));
 
   it('should be created', () => {
-    const service: ProductService = TestBed.get(ProductService);
+    const service: NodeService = TestBed.get(NodeService);
     expect(service).toBeTruthy();
   });
 });

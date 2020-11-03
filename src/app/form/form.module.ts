@@ -31,11 +31,6 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     CheckboxModule,
     DropdownModule,
     InputTextareaModule
-  ],
-  exports: [
-    AutoCompleteComponent,
-    CalendarComponent,
-    InputsComponent
   ]
 })
 export class FormModule { }
