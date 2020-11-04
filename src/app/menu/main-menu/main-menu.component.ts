@@ -45,7 +45,9 @@ export class MainMenuComponent implements OnInit {
           {label: 'Tree table', icon: 'pi-fw fas fa-chevron-down', routerLink: '/data/tree-table'},
           {label: 'Data view', icon: 'pi-fw fas fa-database', routerLink: '/data/data-view'},
           {label: 'Pick list', icon: 'pi-fw fas fa-list', routerLink: '/data/pick-list'},
-          {label: 'Tab view', icon: 'pi-fw fas fa-ellipsis-h', routerLink: '/misc/tab-view'}
+          {label: 'Tab view', icon: 'pi-fw fas fa-ellipsis-h', routerLink: '/misc/tab-view'},
+          {label: 'Flexbox layout', icon: 'pi-fw fas fas fa-ruler', routerLink: '/misc/flexbox-layout'},
+          {label: 'Grid layout', icon: 'pi-fw fas fa-th', routerLink: '/misc/grid-layout'}
         ]
       }
     ];

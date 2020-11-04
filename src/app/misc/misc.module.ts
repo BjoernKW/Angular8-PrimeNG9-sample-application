@@ -6,10 +6,14 @@ import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { MiscRoutingModule } from './misc-routing.module';
+import { FlexboxLayoutComponent } from './flexbox-layout/flexbox-layout.component';
+import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 
 @NgModule({
   declarations: [
-    TabViewComponent
+    TabViewComponent,
+    FlexboxLayoutComponent,
+    GridLayoutComponent
   ],
   imports: [
     CommonModule,
