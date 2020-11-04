@@ -4,13 +4,25 @@ body {
   padding: 2rem;
 }
 
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  column-span: all;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: red;
+  letter-spacing: 1px;
+}
+
 p {
   line-height: 1.5;
   break-after: column;
 }
 
 article {
-  column-width: 200px;
+  column-width: 550px;
   gap: 20px;
 }
 
