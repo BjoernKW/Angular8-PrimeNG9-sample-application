@@ -1,0 +1,62 @@
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+p {
+  line-height: 1.5;
+  break-after: column;
+}
+
+article {
+  column-width: 200px;
+  gap: 20px;
+}
+
+.container {
+  width: 960px;
+  margin: 3em;
+}
+
+.column {
+  display: inline-block;
+  width: 33%;
+  box-sizing: border-box;
+  padding-right: 2em;
+}
+
+a {
+  color: teal;
+}
+
+a:hover {
+  color: orange;
+}
+
+li {
+  position: relative;
+  display: block;
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .125);
+}
+
+caption {
+  background-color: #ccc;
+  padding: 1em;
+}
+
+th {
+  background-color: #ddd;
+  padding: 1em;
+}
+
+td {
+  padding: 1em;
+}
+
+tr:nth-child(odd) {
+  background-color: #eee;
+}
