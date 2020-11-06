@@ -49,6 +49,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### CSS
 
+* [CSS-Tricks](https://css-tricks.com/)
 * [CSS in Depth by Estelle Weyl](https://estelle.github.io/CSS/)
 * [CSS Specificity](https://www.w3schools.com/css/css_specificity.asp)
 * [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
@@ -66,6 +67,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * [Should I use Grid or Flexbox?](https://rachelandrew.co.uk/archives/2016/03/30/should-i-use-grid-or-flexbox/)
 * [Does CSS Grid Replace Flexbox?](https://css-tricks.com/css-grid-replace-flexbox/)
 
+#### Debugging
+
+* [Debugging CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Debugging_CSS)
+* [Debugging Tips and Tricks](https://css-tricks.com/debugging-tips-tricks/)
+* [Debugging CSS](https://benfrain.com/debugging-css/)
+
+#### Tools
+
+* [Can I use](https://caniuse.com/)
+* [W3C Markup Validation Service](https://validator.w3.org/)
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+* [CSS Lint](http://csslint.net/)
+
 ### Angular & PrimeNG
 
 * [Angular :host, :host-context, ::ng-deep - Angular View Encapsulation](https://blog.angular-university.io/angular-host-context/)
@@ -73,6 +87,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### PrimeNG and CSS
 
 #### Common PrimeNG styling questions (and answers) on Stack Overflow
+
 * https://stackoverflow.com/questions/49790092/prime-ng-auto-complete-css-style-applying
 * https://stackoverflow.com/questions/46350302/primeng-how-to-use-styleclass
 * https://stackoverflow.com/questions/59627838/primeng-table-p-table-column-and-data-overlapping-issue-on-browser-window-resizi
@@ -90,6 +105,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * https://stackoverflow.com/questions/44148075/primeng-styling-size-and-alignment-of-p-panel
 
 ## Credits
+
 Includes software from the following resources:
 * https://github.com/glenasmith/pluralsight-primeng, released under the [MIT License](https://opensource.org/licenses/MIT), Copyright (c) 2017 Glen Smith.
 * https://github.com/primefaces/primeng, released under the [MIT License](https://opensource.org/licenses/MIT), Copyright (c) 2016-2020 PrimeTek.
