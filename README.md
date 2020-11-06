@@ -79,6 +79,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * [W3C Markup Validation Service](https://validator.w3.org/)
 * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 * [CSS Lint](http://csslint.net/)
+* [CodePen](https://codepen.io/)
 
 ### Angular & PrimeNG
 
