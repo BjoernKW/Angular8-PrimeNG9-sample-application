@@ -17,8 +17,9 @@ export class MainMenuComponent implements OnInit {
     this.menuItems = [
       {
         label: 'Main',
+        icon: 'fas fa-home',
         items: [
-          {label: 'Dashboard', icon: 'fa fa-home', routerLink: ['/main/dashboard']},
+          {label: 'Dashboard', icon: 'pi-fw fa fa-home', routerLink: ['/main/dashboard']},
           {
             label: 'Times',
             icon: 'fa fa-calendar',
@@ -35,7 +36,7 @@ export class MainMenuComponent implements OnInit {
       },
       {
         label: 'Miscellaneous',
-        icon: 'fab fa-mix',
+        icon: 'pi-fw fab fa-mix',
         items: [
           {label: 'AutoComplete', icon: 'pi pi-fw pi-search-plus', routerLink: '/form/auto-complete'},
           {label: 'Calendar', icon: 'pi pi-fw pi-calendar', routerLink: '/form/calendar'},
@@ -54,7 +55,9 @@ export class MainMenuComponent implements OnInit {
 
     this.minifiedMenuItems = [];
     this.menuItems.forEach((item: MenuItem) => {
-      this.minifiedMenuItems.push({icon: item.icon, routerLink: item.routerLink});
+      item.items.forEach((nestedItem: MenuItem) => {
+        this.minifiedMenuItems.push({icon: nestedItem.icon, routerLink: nestedItem.routerLink});
+      });
     });
   }
 }

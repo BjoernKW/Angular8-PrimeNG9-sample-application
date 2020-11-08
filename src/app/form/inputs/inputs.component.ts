@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+// See https://github.com/primefaces/primeng/blob/master/src/app/components/inputtext/inputtext.ts for
+// details on pInputText directive
 @Component({
   selector: 'app-inputs',
   templateUrl: './inputs.component.html',

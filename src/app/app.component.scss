@@ -21,3 +21,15 @@
   position: absolute;
   left: 190px;
 }
+
+@media only screen and (max-width: 1000px) {
+  #content-body {
+    left: 80px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #content-body {
+    left: 50px;
+  }
+}
