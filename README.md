@@ -67,6 +67,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * [Flexbox vs. CSS Grid: Which Should You Use and When?](https://webdesign.tutsplus.com/articles/flexbox-vs-css-grid-which-should-you-use--cms-30184)
 * [Should I use Grid or Flexbox?](https://rachelandrew.co.uk/archives/2016/03/30/should-i-use-grid-or-flexbox/)
 * [Does CSS Grid Replace Flexbox?](https://css-tricks.com/css-grid-replace-flexbox/)
+* [Layoutit! - CSS Grid Generator](https://grid.layoutit.com/)
+* [Interactive CSS Flexbox Generator · Loading.io](https://loading.io/flexbox/)
 
 #### Debugging
 
